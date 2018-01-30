@@ -8,7 +8,14 @@
  >>> from collections import defaultdict
 >>> a = defaultdict(dict)
 >>> a['aa']
-{}
+{} 
+ # 3.metaclass的使用
+ 首先理解metaclass的概念，元类 就是创建类的一个类，元类本身也是类，然后type就是内置的一个元类， 使用__metaclss__或者（metaclass=xxx）
+ 来使用元类，class的时候，就会把 类名，bases父类，以及namespace等信息传到元类，让元类来进行创建类，如果本身没有这个属性，就会去父类找，模块等去找。
+ 
+ ABCMeta 内置的抽象类，抽象类不能被实例化，抽象方法必须被重写，但是python的实现，要用metaclass=xx来实现，然后如果由abstractmethod装饰器，就无法被实例化。
+
+
  # Git
  # 1.关于分支和pr
  克隆下来的仓库会默认是在master分支上，
