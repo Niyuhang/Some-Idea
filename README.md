@@ -14,7 +14,8 @@
  来使用元类，class的时候，就会把 类名，bases父类，以及namespace等信息传到元类，让元类来进行创建类，如果本身没有这个属性，就会去父类找，模块等去找。
  
  ABCMeta 内置的抽象类，抽象类不能被实例化，抽象方法必须被重写，但是python的实现，要用metaclass=xx来实现，然后如果由abstractmethod装饰器，就无法被实例化。
-
+在Python2中 可以使用__metaclass__ 来使用元类，但是在Python3当中使用方法变成class a（metalcass=xx）
+可以利用six模块的 @six.add_metaclass装饰器来兼容Python2&3
 
  # Git
  # 1.关于分支和pr
